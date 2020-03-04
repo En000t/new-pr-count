@@ -15,7 +15,20 @@ class App extends React.Component {
         };
     }
 
-        handler = (ii) => {
+        haChange =(x)=> {
+                this.setState({value: parseInt(x.target.value)});
+        };
+        haSubmit =(x)=> {
+            const {count,value} = this.state;
+            if (count + value >=0){
+                this.setState({count: this.state.value + count})
+            }
+                x.preventDefault();
+        };
+
+
+
+    handler = (ii) => {
             const {count} = this.state;
             if(ii === 'reset'){
                 this.setState({count: 0})
